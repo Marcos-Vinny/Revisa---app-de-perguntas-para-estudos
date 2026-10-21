@@ -7,18 +7,27 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title" content="Flashcards">
+<meta name="apple-mobile-web-app-title" content="RevisaCards">
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icon-192.png">
 <link rel="icon" href="icon-192.png">
 <link rel="stylesheet" href="style.css">
-<title>Flashcards</title>
+<title>RevisaCards</title>
 </head>
 <body>
 
 <header>
-  <h1>🐾 Flashcards</h1>
-  <div class="counter" id="counter"></div>
+  <h1>🐾 RevisaCards</h1>
+  <div class="header-right">
+    <div class="counter" id="counter"></div>
+    <button class="btn-about" id="btnAbout" aria-label="Sobre o app" title="Sobre">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="10.5" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <circle cx="12" cy="9.2" r="3.4" fill="currentColor"/>
+        <path d="M5.2 19.2c.4-3.6 3-5.6 6.8-5.6s6.4 2 6.8 5.6c-1.8 1.7-4.2 2.8-6.8 2.8s-5-1.1-6.8-2.8z" fill="currentColor"/>
+      </svg>
+    </button>
+  </div>
 </header>
 
 <!-- Tela de Perguntas / Revisão (Player) - SEM barra de conjuntos -->
@@ -80,6 +89,23 @@
       <button class="btn-soft" id="btnSetCancel">Cancelar</button>
       <button class="btn-primary" id="btnSetSave">Salvar</button>
     </div>
+  </div>
+</div>
+
+<div class="modal-bg center" id="aboutBg">
+  <div class="modal about-card">
+    <div class="about-icon">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="10.5" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <circle cx="12" cy="9.2" r="3.4" fill="currentColor"/>
+        <path d="M5.2 19.2c.4-3.6 3-5.6 6.8-5.6s6.4 2 6.8 5.6c-1.8 1.7-4.2 2.8-6.8 2.8s-5-1.1-6.8-2.8z" fill="currentColor"/>
+      </svg>
+    </div>
+    <p class="about-text">Desenvolvido por <strong>Marcos Vinícius</strong></p>
+    <a class="about-link" href="https://github.com/Marcos-Vinny/Revisa---app-de-perguntas-para-estudos" target="_blank" rel="noopener noreferrer">
+      Ver no GitHub
+    </a>
+    <button class="btn-soft" id="btnAboutClose">Fechar</button>
   </div>
 </div>
 

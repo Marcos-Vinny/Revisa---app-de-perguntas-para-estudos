@@ -1,6 +1,6 @@
 {
-  "name": "Flashcards",
-  "short_name": "Flashcards",
+  "name": "RevisaCards",
+  "short_name": "RevisaCards",
   "description": "Flashcards de estudo com perguntas e respostas",
   "start_url": "./index.html",
   "scope": "./",
