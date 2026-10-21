@@ -427,7 +427,7 @@
     if (t.dataset.rate) rate(t.dataset.rate);
     if (t.id === "btnRepeat") repeatSession();
     if (t.id === "btnReview") reviewMissed();
-  });
+  });  
 
   document.addEventListener("keydown", function (e) {
     if (document.body.classList.contains("editing")) return;
