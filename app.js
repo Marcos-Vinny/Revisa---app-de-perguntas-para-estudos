@@ -429,7 +429,7 @@
     if (document.body.classList.contains("editing")) return;
     if (document.querySelector(".modal-bg.on")) return;
     var map = { "1": "ok", "2": "wrong", "3": "partial" };
-    if (map[e.key]) rate(map[e.key]);
+    if (map[e.key]) rate(map[e.key]); 
   });
 
   window.__fc = { cards: cardsOf, order: function () { return order; }, shuffleArray: shuffleArray };
