@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<meta name="theme-color" content="#7c3aed">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Flashcards">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="icon" href="icon-192.png">
+<link rel="stylesheet" href="style.css">
+<title>Flashcards</title>
+</head>
+<body>
+
+<header>
+  <h1>🐾 Flashcards</h1>
+  <div class="counter" id="counter"></div>
+</header>
+
+<!-- Tela de Perguntas / Revisão (Player) - SEM barra de conjuntos -->
+<section id="player">
+  <main id="main"></main>
+  <div class="actions">
+    <button class="btn-soft" id="btnShuffle">🔀 Embaralhar</button>
+    <button class="btn-soft" id="btnEdit">✏️ Editar perguntas</button>
+  </div>
+</section>
+
+<!-- Tela de Gerenciamento e Edição - COM a seleção e opções de conjuntos -->
+<section id="editor">
+  <div class="set-management-header">
+    <div class="set-title-row">
+      <span id="currentSetName" class="set-name-text">Nenhum conjunto</span>
+      <button class="btn-soft btn-small" id="btnRenameSet" title="Renomear conjunto">Renomear</button>
+    </div>
+    <div class="set-main-actions">
+      <button class="btn-soft" id="btnChooseSet">Escolher conjunto</button>
+      <button class="btn-soft btn-small" id="btnNewSet">Novo conjunto</button>
+      <button class="btn-danger btn-small" id="btnDelSet">Apagar conjunto</button>
+    </div>
+    <!-- Lista suspensa de escolha de conjuntos -->
+    <div class="set-dropdown-panel" id="setDropdownPanel" style="display:none;">
+      <div id="setOptionsList"></div>
+      <button class="btn-primary btn-small" id="btnCreateWhenEmpty" style="width:100%; margin-top:8px; display:none;">Criar novo conjunto</button>
+    </div>
+  </div>
+
+  <div class="editor-top">
+    <button class="btn-primary" id="btnAdd">+ Nova pergunta</button>
+    <button class="btn-soft" id="btnDone">✔ Concluir</button>
+  </div>
+  
+  <div class="list" id="list"></div>
+</section>
+
+<div class="modal-bg" id="modalBg">
+  <div class="modal">
+    <h2 id="modalTitle">Nova pergunta</h2>
+    <label for="inQ">Pergunta</label>
+    <textarea id="inQ" placeholder="Digite a pergunta..."></textarea>
+    <label for="inA">Resposta</label>
+    <textarea id="inA" placeholder="Digite a resposta..."></textarea>
+    <div class="actions">
+      <button class="btn-soft" id="btnCancel">Cancelar</button>
+      <button class="btn-primary" id="btnSave">Salvar</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-bg" id="setModalBg">
+  <div class="modal">
+    <h2 id="setModalTitle">Novo conjunto</h2>
+    <label for="inSet">Nome do conjunto</label>
+    <input id="inSet" type="text" maxlength="40" placeholder="Ex.: Biologia">
+    <div class="actions">
+      <button class="btn-soft" id="btnSetCancel">Cancelar</button>
+      <button class="btn-primary" id="btnSetSave">Salvar</button>
+    </div>
+  </div>
+</div>
+
+<script src="app.js" defer></script>
+</body>
+</html>
