@@ -408,6 +408,10 @@
   $("btnSetCancel").addEventListener("click", closeSetModal);
   $("btnSetSave").addEventListener("click", saveSetModal);
   $("setModalBg").addEventListener("click", function (e) { if (e.target === this) closeSetModal(); });
+
+  $("btnAbout").addEventListener("click", function () { $("aboutBg").classList.add("on"); });
+  $("btnAboutClose").addEventListener("click", function () { $("aboutBg").classList.remove("on"); });
+  $("aboutBg").addEventListener("click", function (e) { if (e.target === this) this.classList.remove("on"); });
   $("inSet").addEventListener("keydown", function (e) { if (e.key === "Enter") saveSetModal(); });
   
   $("list").addEventListener("click", function (e) {

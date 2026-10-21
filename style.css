@@ -205,3 +205,31 @@ body.editing #player { display: none; }
 .modal textarea { min-height: 80px; }
 .modal textarea:focus, .modal input:focus { outline: none; border-color: var(--primary); }
 .modal .actions { padding: 16px 0 0; max-width: none; }
+
+/* Botão "Sobre" no cabeçalho */
+.header-right { display: flex; align-items: center; gap: 10px; }
+.btn-about {
+  flex: 0 0 auto; width: 34px; height: 34px; padding: 0; border-radius: 50%;
+  background: transparent; color: var(--muted); border: 0;
+  display: flex; align-items: center; justify-content: center;
+}
+.btn-about svg { width: 26px; height: 26px; }
+.btn-about:active { background: #ede9fe; }
+
+/* Card "Desenvolvido por" */
+.modal-bg.center { align-items: center; padding: 20px; }
+.about-card {
+  border-radius: 24px; max-width: 340px; text-align: center;
+  padding: 24px 20px 20px; animation: pop .22s ease-out;
+  display: flex; flex-direction: column; align-items: center; gap: 12px;
+}
+.about-icon { color: var(--primary); }
+.about-icon svg { width: 56px; height: 56px; }
+.about-text { margin: 0; font-size: 1.05rem; line-height: 1.4; }
+.about-link {
+  display: block; width: 100%; padding: 14px 16px; border-radius: 16px;
+  background: var(--primary); color: #fff; font-weight: 700; text-decoration: none;
+}
+.about-link:active { background: var(--primary-dark); }
+.about-card .btn-soft { width: 100%; flex: 0 0 auto; }
+@keyframes pop { from { opacity: 0; transform: scale(.92); } to { opacity: 1; transform: none; } }

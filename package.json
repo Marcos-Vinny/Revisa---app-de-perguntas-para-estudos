@@ -1,0 +1,18 @@
+{
+  "name": "revisa-flashcards",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Flashcards de estudo com perguntas e respostas",
+  "scripts": {
+    "build:web": "node scripts/build-web.js",
+    "sync": "npm run build:web && npx cap sync android"
+  },
+  "dependencies": {
+    "@capacitor/android": "^6.1.2",
+    "@capacitor/core": "^6.1.2"
+  },
+  "devDependencies": {
+    "@capacitor/assets": "^3.0.5",
+    "@capacitor/cli": "^6.1.2"
+  }
+}

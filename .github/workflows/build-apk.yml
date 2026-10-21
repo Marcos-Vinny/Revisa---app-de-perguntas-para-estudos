@@ -1,0 +1,47 @@
+name: Gerar APK
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  apk:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - name: Instalar dependências
+        run: npm install
+
+      - name: Montar app web
+        run: npm run build:web
+
+      - name: Criar projeto Android
+        run: npx cap add android
+
+      - name: Gerar ícones do app
+        run: npx capacitor-assets generate --android
+        continue-on-error: true
+
+      - name: Sincronizar
+        run: npx cap sync android
+
+      - name: Compilar APK
+        working-directory: android
+        run: ./gradlew assembleDebug
+
+      - name: Guardar APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: flashcards-apk
+          path: android/app/build/outputs/apk/debug/app-debug.apk
